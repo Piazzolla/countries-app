@@ -11,5 +11,15 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col">Results tables</div>
+  <div class="col">
+    <hr>
+    <ul>
+      @for (country of countries; track $index) {
+        <li>
+          {{ country.capital }} - {{country.population}}
+        </li>
+      }
+    </ul>
+
+  </div>
 </div>
