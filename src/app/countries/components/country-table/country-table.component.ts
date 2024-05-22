@@ -9,7 +9,7 @@ import { Country } from '../../interfaces/country';
   styles: `
     img {
       width: 35px;
-      height: 35px;
+      height: 25px;
     }
     .icon {
       font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
