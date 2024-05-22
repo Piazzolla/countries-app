@@ -1,1 +1,50 @@
-<p>country-page works!</p>
+
+@if( !country ) {
+<ng-template>
+  <div class="alerte alert-info">
+    Wait please
+  </div>
+</ng-template>
+}
+@if( country ) {
+
+  <div class="">
+    <div class="row">
+    <div class="col-12">
+      <h2>Country: <strong>{{country?.name?.common}}</strong></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Flag</h3>
+      <img [src]="country.flags.svg" alt="country.name.common" class="img-thumbnail">
+    </div>
+    <div class="col">
+      <h3>Information</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Population: {{ country.population | number }}</strong>
+        </li>
+        <li class="list-group-item">
+          <strong>Code: {{ country.cca3 }}</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Translations</h3>
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1 p-2">Arab: {{ country.translations['ara'].common}}</span>
+        <span class="badge bg-primary m-1 p-2">French: {{ country.translations['fra'].common}}</span>
+        <span class="badge bg-primary m-1 p-2">Spanish: {{ country.translations['spa'].common}}</span>
+        <span class="badge bg-primary m-1 p-2">Italian: {{ country.translations['ita'].common}}</span>
+        <span class="badge bg-primary m-1 p-2">Korean: {{ country.translations['kor'].common}}</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+}
