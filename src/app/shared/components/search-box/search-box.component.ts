@@ -1,9 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'shared-search-box',
-
   templateUrl: './search-box.component.html',
   styles: `
     :host {
@@ -16,4 +15,11 @@ export class SearchBoxComponent {
 
   @Input()
   public placeholder: string = '';
+
+  @Output()
+  public searchEvent: EventEmitter<string> = new EventEmitter<string>();
+
+  public emitValue(value: string) {
+    this.searchEvent.emit(value);
+  }
 }
