@@ -6,6 +6,7 @@
     <!-- sarchbox -->
     <shared-search-box
       (onDebounce)="searchByCapital($event)"
+      [initialValue] ="initialValue"
       (searchEvent)="searchByCapital($event)"
       placeholder="Search by capital"></shared-search-box>
   </div>
